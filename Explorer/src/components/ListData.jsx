@@ -1,39 +1,43 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
+import Container from 'react-bootstrap/Container';
 
 
-const ListData = () => {
+const ListData = ({ allListData }) => {
     return (
         <>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>GR ID</th>
-                        <th>NAME</th>
-                        <th>CONTACTNUMBER</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan={2}>Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </Table>
+            <Container className="border border-black p-4">
+                <Table striped bordered hover responsive>
+                    <thead>
+                        <tr className="text-center">
+                            <th>GR_ID</th>
+                            <th>Full Name</th>
+                            <th>Course</th>
+                            <th>Number</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {allListData.length === 0 ? (
+                            <h5 className="text-center">Data is Empty</h5>
+                        ) : (
+                            allListData.map((item) => {
+                                return (
+                                    <tr className="text-center">
+                                        <td>{item.grid}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.course}</td>
+                                        <td>{item.number}</td>
+                                        <td>{item.address}</td>
+                                    </tr>
+                                );
+                            })
+                        )}
+                    </tbody>
+                </Table>
+            </Container>
         </>
     )
 }
+
+export default ListData;
