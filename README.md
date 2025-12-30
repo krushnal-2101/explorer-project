@@ -69,9 +69,6 @@ HTML
 
 ⚙️ Installation & Setup
 
-Clone the repository
-
-git clone https://github.com/your-username/student-data-app.git
 
 
 Navigate to the project folder
@@ -89,9 +86,9 @@ Run the development server
 npm run dev
 
 
-Open your browser and go to:
 
-http://localhost:5173
+
+
 
 🧩 Components Overview
 
